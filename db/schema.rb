@@ -10,10 +10,38 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_04_20_175434) do
+ActiveRecord::Schema.define(version: 2022_04_30_162650) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "available_times", primary_key: "uid", id: :string, force: :cascade do |t|
+    t.date "date"
+    t.string "available_times", default: [], array: true
+    t.string "doctor_uid"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "booking_times", primary_key: "uid", id: :string, force: :cascade do |t|
+    t.date "date"
+    t.integer "start_time"
+    t.integer "end_time"
+    t.string "patient_uid"
+    t.string "doctor_uid"
+    t.string "link_meeting"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "schedule_times", primary_key: "uid", id: :string, force: :cascade do |t|
+    t.date "date"
+    t.integer "start_time"
+    t.integer "end_time"
+    t.string "doctor_uid"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
 
   create_table "users", primary_key: "uid", id: :string, force: :cascade do |t|
     t.string "name"
