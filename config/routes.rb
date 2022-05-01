@@ -29,6 +29,29 @@ Rails.application.routes.draw do
           end
         end
       end
+
+      namespace :doctor do
+        resources :schedule_time, only: [:create, :destroy], param: :uid do
+          collection do
+            get :schedule_time_of_date
+          end
+        end
+        resources :booking_time do
+        end
+      end
+
+      namespace :patient do
+        resources :schedule_time, param: :uid do
+          collection do
+            get :find_doctor
+          end
+        end
+        resources :booking_time do
+          collection do
+            post :booking
+          end
+        end
+      end
     end
   end
 end
