@@ -6,5 +6,14 @@ class Api::V1::PatientSerializer < ActiveModel::Serializer
     :type,
     :phone,
     :role,
-    :avatar
+    :avatar,
+    :national_id,
+    :religion,
+    :residential_address,
+    :address,
+    :national,
+    :province,
+    :district,
+    :wards
+
 end
