@@ -44,11 +44,17 @@ Rails.application.routes.draw do
         resources :schedule_time, param: :uid do
           collection do
             get :find_doctor
+            get :available_time
           end
         end
         resources :booking_time do
           collection do
             post :booking
+          end
+        end
+        resources :user do
+          collection do
+            get :list_doctor
           end
         end
       end
