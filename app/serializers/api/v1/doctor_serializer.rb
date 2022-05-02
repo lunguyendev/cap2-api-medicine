@@ -8,5 +8,14 @@ class Api::V1::DoctorSerializer < ActiveModel::Serializer
     :role,
     :major,
     :experience,
-    :avatar
+    :avatar,
+    :national_id,
+    :religion,
+    :residential_address,
+    :address,
+    :national,
+    :province,
+    :district,
+    :wards
+
 end
