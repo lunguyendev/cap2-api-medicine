@@ -109,4 +109,11 @@ module ScheduleTimeService
       available_time.update_attributes!(available_times: available_times)
     end
   end
+
+  def available_time_of_date(doctor, date)
+    available_times = doctor.available_times.first&.available_times
+    return convert_available_times(available_times) if available_times
+
+    return []
+  end
 end
