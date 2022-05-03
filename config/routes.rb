@@ -38,6 +38,11 @@ Rails.application.routes.draw do
         end
         resources :booking_time do
         end
+        resources :prescription, param: :uid do
+          collection do
+            get :show_by_patient
+          end
+        end
       end
 
       namespace :patient do
@@ -55,6 +60,11 @@ Rails.application.routes.draw do
         resources :user do
           collection do
             get :list_doctor
+          end
+        end
+        resources :prescription, param: :uid do
+          collection do
+            get :show_by_booking
           end
         end
       end
