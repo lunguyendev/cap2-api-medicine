@@ -8,6 +8,7 @@ class Api::V1::DoctorSerializer < ActiveModel::Serializer
     :role,
     :major,
     :experience,
+    :birthday,
     :avatar,
     :national_id,
     :religion,

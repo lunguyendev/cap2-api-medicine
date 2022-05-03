@@ -6,6 +6,7 @@ class Api::V1::PatientSerializer < ActiveModel::Serializer
     :type,
     :phone,
     :role,
+    :birthday,
     :avatar,
     :national_id,
     :religion,
