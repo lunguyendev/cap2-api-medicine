@@ -111,7 +111,7 @@ module ScheduleTimeService
   end
 
   def available_time_of_date(doctor, date)
-    available_times = doctor.available_times.first&.available_times
+    available_times = doctor.available_times.where(date: date).first&.available_times
     return convert_available_times(available_times) if available_times
 
     return []
